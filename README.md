@@ -5,10 +5,17 @@
 * Create new domain, symlink and project folder with just one command
 * Simple Backup script to zip home folder
 
-## Roadmap
+## Installation
 
-* Clean up files!
-* Extend Backup-script to send tar to external server
+### Backup
+
+* Setup passwordless shh connection for your external server or remove the lines near `## Send File to external server`
+* Edit `USER`, `IP_TO_SERVER` and `PATH_TO_FOLDER` to your needs
+
+### create, delete Project
+
+* Go to `createProject.sh` or `deleteProject.sh` and edit variable `DOMAIN`
+* Call script `sh createProject.sh SUBDOMAIN`
 
 ## License
 
