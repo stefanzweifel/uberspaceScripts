@@ -39,7 +39,7 @@ rm -rf /home/$USER/backup-$USER/backup-$DATE.tar.bz2
 
 
 # Send Messaget to Slack
-if [ ! SLACK_DOMAIN = 'PLACE_DOMAIN_HERE']
+if [ ! $SLACK_DOMAIN = 'PLACE_DOMAIN_HERE']
 
     curl -X POST --data-urlencode 'payload={"channel": "#general", "username": "uberspaceBot", "text": "Backup complete.", "icon_emoji": ":ghost:"}' https://$SLACK_DOMAIN.slack.com/services/hooks/incoming-webhook?token=$SLACK_TOKEN
 
