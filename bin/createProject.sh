@@ -1,5 +1,5 @@
 #!/bin/sh
-# 
+#
 # Create a new subdomain and symlink to folder in html-root
 #
 # Param:    subdomain name
@@ -17,7 +17,7 @@ if [ $# -ne 1]
 else
 
     # Add domain
-    uberspace-add-domain -d $SUBDOMAIN.wnx.ch -w
+    uberspace-add-domain -d $SUBDOMAIN.$DOMAIN -w
     echo "------------------------------"
     echo "Subdomain created";
     echo "";
@@ -43,6 +43,6 @@ else
     fi
 
     echo "------------------------------"
-    echo "Go to /var/www/virtual/$USER/html/$SUBDOMAIN.$DOMAIN and put your files in there."
+    echo "Go to /var/www/virtual/$USER/html/$SUBDOMAIN.$DOMAIN and put your files there."
 
 fi

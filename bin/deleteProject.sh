@@ -1,5 +1,5 @@
 #!/bin/sh
-# 
+#
 # Delete subdomain and project folder in HTML root
 #
 # Param:    subdomain name
@@ -17,7 +17,7 @@ if [ $# -ne 1 ]
 else
 
     # Add domain
-    uberspace-del-domain -d $SUBDOMAIN.wnx.ch -w
+    uberspace-del-domain -d $SUBDOMAIN.$DOMAIN -w
     echo "------------------------------"
     echo "Domain $SUBDOMAIN.$DOMAIN deleted.";
     echo "";
