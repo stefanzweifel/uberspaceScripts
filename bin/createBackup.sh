@@ -7,13 +7,13 @@
 #
 
 # Variables
-DATE         =`date +%d-%m-%Y-%H-%M-%S` #Current time
-SLACK_DOMAIN ='PLACE_DOMAIN_HERE'
-SLACK_TOKEN  ='PLACE_TOKEN_HERE'
+DATE=`date +%d-%m-%Y-%H-%M-%S` #Current time
+SLACK_DOMAIN='PLACE_DOMAIN_HERE'
+SLACK_TOKEN='PLACE_TOKEN_HERE'
 
-USER           = ''
-IP_TO_SERVER   = ''
-PATH_TO_FOLDER = ''
+SERVER_USER=''
+IP_TO_SERVER=''
+PATH_TO_FOLDER=''
 
 # Check if backup folder exists and create it
 if [ ! -d /home/$USER/backup-$USER ]
@@ -36,7 +36,7 @@ tar -cjf /home/$USER/backup-$USER/backup-$DATE.tar.bz2 *
 rm /var/www/virtual/$USER/database.sql.gz
 
 # Send File to external server
-scp /home/$USER/backup-$USER/backup-$DATE.tar.bz2 $USER@$IP_TO_SERVER:/$PATH_TO_FOLDER/backup-$USER
+scp /home/$USER/backup-$USER/backup-$DATE.tar.bz2 $SERVER_USER@$IP_TO_SERVER:/$PATH_TO_FOLDER/backup-$USER
 
 # Remove backup file from uberspace
 rm -rf /home/$USER/backup-$USER/backup-$DATE.tar.bz2

@@ -10,13 +10,13 @@ DOMAIN=$1;
 
 if [ $# -ne 1]
     then
-        echo "Please enter subdomain";
+        echo "Please enter domain";
 else
 
     # Add domain
     uberspace-add-domain -d $DOMAIN -w
     echo "------------------------------"
-    echo "Subdomain created";
+    echo "Domain created";
     echo "";
 
     # Check if folder in html root exists

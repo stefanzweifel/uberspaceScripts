@@ -10,7 +10,7 @@ DOMAIN=$1;
 
 if [ $# -ne 1 ]
     then
-        echo "Please enter subdomain.";
+        echo "Please enter domain.";
 else
 
     # Add domain
