@@ -2,20 +2,20 @@
 
 ## Features
 
-* Create new domain, symlink and project folder with just one command
-* Simple Backup script to zip home folder
+- Create new domain, symlink and project folder with just one command
+- Simple Backup script to zip home folder
 
 ## Installation
 
 ### Backup
 
-* Setup passwordless shh connection for your external server or remove the lines near `## Send File to external server`
-* Edit `USER`, `IP_TO_SERVER` and `PATH_TO_FOLDER` to your needs
+- Setup passwordless shh connection for your external server or remove the lines near `## Send File to external server`
+- Edit `USER`, `IP_TO_SERVER` and `PATH_TO_FOLDER` variables to your needs
+- Optional: Edit `SLACK_TOKEN` and `SLACK_DOMAIN` to get a [Slack Notification](http://slack.com)
 
 ### create, delete Project
 
-* Go to `createProject.sh` or `deleteProject.sh` and edit variable `DOMAIN`
-* Call script `sh createProject.sh SUBDOMAIN`
+- Call script `sh createProject.sh DOMAIN`
 
 ## License
 

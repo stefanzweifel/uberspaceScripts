@@ -1,15 +1,12 @@
 #!/bin/sh
 #
-# Delete subdomain and project folder in HTML root
+# Delete domain and project folder in HTML root
 #
 # Param:    subdomain name
 # Author:   Stefan Zweifel
 #
 
-# Config Var
-DOMAIN="wnx.ch"; # main domain
-
-SUBDOMAIN=$1;
+DOMAIN=$1;
 
 if [ $# -ne 1 ]
     then
@@ -17,26 +14,26 @@ if [ $# -ne 1 ]
 else
 
     # Add domain
-    uberspace-del-domain -d $SUBDOMAIN.$DOMAIN -w
+    uberspace-del-domain -d $DOMAIN -w
     echo "------------------------------"
-    echo "Domain $SUBDOMAIN.$DOMAIN deleted.";
+    echo "Domain $DOMAIN deleted.";
     echo "";
 
     # Check if folder in html root exists
-    if [ -d /var/www/virtual/$USER/html/$SUBDOMAIN.$DOMAIN ]
+    if [ -d /var/www/virtual/$USER/html/$DOMAIN ]
         then
         # Delete folder in HTML Root
-        rm -rf /var/www/virtual/$USER/html/$SUBDOMAIN.$DOMAIN
+        rm -rf /var/www/virtual/$USER/html/$DOMAIN
         echo "------------------------------"
         echo "Project folder removed."
         echo "";
     fi
 
     # Check if symlink exists
-    if [ ! -d /var/www/virtual/$USER/$SUBDOMAIN.$DOMAIN ]
+    if [ ! -d /var/www/virtual/$USER/$DOMAIN ]
         then
         # Create symlink
-        rm -rf /var/www/virtual/$USER/$SUBDOMAIN.$DOMAIN
+        rm -rf /var/www/virtual/$USER/$DOMAIN
         echo "------------------------------"
         echo "Removed symlink."
         echo "";

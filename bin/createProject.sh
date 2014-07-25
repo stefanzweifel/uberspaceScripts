@@ -1,15 +1,12 @@
 #!/bin/sh
 #
-# Create a new subdomain and symlink to folder in html-root
+# Create a new domain and symlink to folder in html-root
 #
-# Param:    subdomain name
+# Param:    domain name
 # Author:   Stefan Zweifel
 #
 
-# Config Var
-DOMAIN="wnx.ch"; # main domain
-
-SUBDOMAIN=$1;
+DOMAIN=$1;
 
 if [ $# -ne 1]
     then
@@ -17,32 +14,32 @@ if [ $# -ne 1]
 else
 
     # Add domain
-    uberspace-add-domain -d $SUBDOMAIN.$DOMAIN -w
+    uberspace-add-domain -d $DOMAIN -w
     echo "------------------------------"
     echo "Subdomain created";
     echo "";
 
     # Check if folder in html root exists
-    if [ ! -d /var/www/virtual/$USER/html/$SUBDOMAIN.$DOMAIN ]
+    if [ ! -d /var/www/virtual/$USER/html/$DOMAIN ]
         then
         # Create folder in HTML Root
-        mkdir /var/www/virtual/$USER/html/$SUBDOMAIN.$DOMAIN
+        mkdir /var/www/virtual/$USER/html/$DOMAIN
         echo "------------------------------"
         echo "Created project folder."
         echo "";
     fi
 
     # Check if symlink already exists
-    if [ ! -d /var/www/virtual/$USER/$SUBDOMAIN.$DOMAIN ]
+    if [ ! -d /var/www/virtual/$USER/$DOMAIN ]
         then
         # Create symlink
-        ln -s /var/www/virtual/$USER/html/$SUBDOMAIN.$DOMAIN /var/www/virtual/$USER/$SUBDOMAIN.$DOMAIN
+        ln -s /var/www/virtual/$USER/html/$DOMAIN /var/www/virtual/$USER/$DOMAIN
         echo "------------------------------"
         echo "Created symlink."
         echo "";
     fi
 
     echo "------------------------------"
-    echo "Go to /var/www/virtual/$USER/html/$SUBDOMAIN.$DOMAIN and put your files there."
+    echo "Go to /var/www/virtual/$USER/html/$DOMAIN and put your files there."
 
 fi
