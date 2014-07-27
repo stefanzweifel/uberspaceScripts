@@ -2,8 +2,7 @@
 #
 # Clear Sharing folder
 #
-# Kudos: https://gist.github.com/bl1nk/24597861ad7e29bbc41c
 
-PATH=PATH_TO_SHARING_FOLDER
+$FOLDER_PATH=PATH_TO_SHARING_FOLDER
 
-find $PATH -type f ! -name index.html -mmin +1440 -delete
+/bin/find $FOLDER_PATH -maxdepth 1 -mindepth 1 -type d -mmin +1440 -exec rm -rf {} \;
